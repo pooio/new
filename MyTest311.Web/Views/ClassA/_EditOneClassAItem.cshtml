@@ -1,0 +1,39 @@
+@using MyTest311.Web.HtmlExtensions
+<!--add customized code between this region-->
+<!--add customized code between this region-->
+@model MyTest311.Web.Models.ClassAModel
+
+@Html.Hidden("EditOneClassAItem.Id")
+@Html.Hidden("EditOneClassAItem.OwnerId")
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="Name" class="col-md-4 from-title">Name</label>
+            <div class="col-md-8 from-cont">
+                @Html.TextBox("EditOneClassAItem.Name", null, new {@class = "form-control"})
+                @Html.ValidationMessage("EditOneClassAItem.Name")
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="Description" class="col-md-4 from-title">Description</label>
+            <div class="col-md-8 from-cont">
+                @Html.TextBox("EditOneClassAItem.Description", null, new {@class = "form-control"})
+                @Html.ValidationMessage("EditOneClassAItem.Description")
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="submit">
+    <input type="button" value="Cancel" class="cancel" onclick="editClassAItem.cancelItem()"/>
+    <input type="button" value="Save" class="ok" onclick="editClassAItem.saveItem(this)"/>
+</div>
+<script>
+    $(document)
+        .ready(function() {
+<!--add customized code between this region-->
+<!--add customized code between this region-->
+        });
+</script>

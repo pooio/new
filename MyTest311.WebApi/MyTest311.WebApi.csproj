@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <RootNamespace>MyTest311.WebApi</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="App_Start\NamespaceHttpControllerSelector.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="App_Start\" />
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+
+    <ProjectReference Include="..\MyTest311.Entities\MyTest311.Entities.csproj" />
+
+    <ProjectReference Include="..\MyTest311.Daos\MyTest311.Daos.csproj" />
+
+    <ProjectReference Include="..\MyTest311.Services.Interfaces\MyTest311.Services.Interfaces.csproj" />
+
+    <ProjectReference Include="..\MyTest311.Services\MyTest311.Services.csproj" />
+
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

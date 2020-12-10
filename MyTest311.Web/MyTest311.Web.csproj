@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <RootNamespace>MyTest311.Web</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\AccountController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
+  </ItemGroup>
+  
+  <!--add customized code between this region-->
+  <!--add customized code between this region-->
+  <ItemGroup>
+
+    <ProjectReference Include="..\MyTest311.Entities\MyTest311.Entities.csproj" />
+
+    <ProjectReference Include="..\MyTest311.Daos.Interfaces\MyTest311.Daos.Interfaces.csproj" />
+
+    <ProjectReference Include="..\MyTest311.Daos\MyTest311.Daos.csproj" />
+
+    <ProjectReference Include="..\MyTest311.Services.Interfaces\MyTest311.Services.Interfaces.csproj" />
+
+    <ProjectReference Include="..\MyTest311.Services\MyTest311.Services.csproj" />
+
+    <!--add customized code between this region-->
+    <!--add customized code between this region-->
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

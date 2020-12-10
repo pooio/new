@@ -1,0 +1,47 @@
+@using MetaShare.Common.Core.Presentation
+@using MyTest311.Entities
+@using MyTest311.Web.HtmlExtensions
+@using MyTest311.Web.Models
+<!--add customized code between this region-->
+<!--add customized code between this region-->
+
+@model IndexViewModel<ClassB>
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+            <tr>
+		<th class="text-left">Name</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            @if (Model.TargetPager != null && Model.TargetPager.Datas != null)
+            {
+            foreach (MyTest311.Entities.ClassB classBItem in Model.TargetPager.Datas)
+                        {
+                <tr>
+			<td  class="text-left">
+				@Html.DisplayFor(modelItem => classBItem.Name)
+			</td>
+                    <td>
+                        @Html.ActionLink(" ", "Details", new { id = classBItem.Id, Controller = "ClassB", area = ""}, new {@class="m_details", title="Details" })
+                        @Html.ActionLink(" ", "Edit", new { id = classBItem.Id, Controller = "ClassB", area = ""}, new {@class="m_edit", title="Edit" })
+                        @Html.ActionLink(" ", "#", "#",null , new {href = "javascript:void(0);",@class="m_delete", title="Delete", onclick = " javascript:metaShare.basic.prototype.deleteTableColumn(this,'" + classBItem.Id + "','" + Url.Action("Delete",new {Controller = "ClassB", area = ""}) + "'); return false; "})
+                    </td>
+                </tr>
+            }
+            }
+<!--add customized code between this region-->
+<!--add customized code between this region-->
+            </tbody>
+        </table>
+
+
+        <div class="UserPagerDiv text-center">
+    @{
+        object conditions = new
+        {
+            Name = Model.SearchModel != null ? Model.SearchModel.Name : "",
+        };
+    }
+        @Html.AjaxRenderPager(Model.TargetPager, "Search", "ClassB","ClassB_DataList", conditions)
+        </div>
