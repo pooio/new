@@ -48,6 +48,9 @@ namespace MyTest311.Daos
 
 				context.AddParameter(command, "Description2", item.Description2 ?? (object) DBNull.Value);
 				/*add customized code between this region*/
+				int a =1;
+				int b = 2;
+				int c = a + b;
 				/*add customized code between this region*/
 			}
 		}
@@ -60,6 +63,10 @@ namespace MyTest311.Daos
 		{
 		}
 		/*add customized code between this region*/
+		public ClassADao(string abc)
+		{
+		
+		}
 		/*add customized code between this region*/
 	}
 }
